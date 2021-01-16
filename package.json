@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/ccr-team92/backend/issues"
   },
-  "homepage": "https://github.com/ccr-team92/backend#readme"
+  "homepage": "https://github.com/ccr-team92/backend#readme",
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "serverless-offline": "^6.8.0",
+    "serverless-webpack": "^5.3.5",
+    "webpack": "^5.15.0"
+  }
 }
