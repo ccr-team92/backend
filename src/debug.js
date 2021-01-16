@@ -1,4 +1,4 @@
-import { response } from '../utils';
+import { response } from './utils';
 
 export async function endpoint(event) {
   try {

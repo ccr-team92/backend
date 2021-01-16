@@ -18,6 +18,7 @@ module.exports = {
       }
     ],
   },
+  externals: { 'bcrypt': 'bcrypt' },
   resolve: {
     extensions: ['.js'],
   },

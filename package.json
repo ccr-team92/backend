@@ -17,7 +17,12 @@
   },
   "homepage": "https://github.com/ccr-team92/backend#readme",
   "dependencies": {
-    "mongodb": "^3.6.3"
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "express-validator": "^6.9.2",
+    "mongodb": "^3.6.3",
+    "serverless-http": "^2.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
