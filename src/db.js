@@ -7,8 +7,12 @@ const client = new MongoClient(DB_URI, {
   useUnifiedTopology: true,
 });
 
+let _db = null;
+
 export async function db() {
-  await client.connect();
-  const db = client.db('ccr-team92');
-  return db;
+  if (_db === null) {
+    await client.connect();
+    _db = client.db('ccr-team92');
+  }
+  return _db;
 }
