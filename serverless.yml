@@ -16,18 +16,19 @@ provider:
 
   environment:
     DB_URI: ${file(config.${opt:stage, self:provider.stage, 'dev'}.json):DB_URI}
+    TOKEN_SECRET: ${file(config.${opt:stage, self:provider.stage, 'dev'}.json):TOKEN_SECRET}
 
 plugins:
   - serverless-webpack
   - serverless-offline
 
 functions:
-  debug:
-    handler: src/debug.endpoint
-    events:
-      - httpApi:
-          path: /debug
-          method: get
+  # debug:
+  #   handler: src/debug.endpoint
+  #   events:
+  #     - httpApi:
+  #         path: /debug
+  #         method: get
   app:
     handler: src/index.handler
     events:
@@ -44,5 +45,6 @@ custom:
     includeModules: false
     packager: 'yarn'
     excludeFiles: test/**/*.js
+    keepOutputDirectory: true
   serverless-offline:
     noPrependStageInUrl: true

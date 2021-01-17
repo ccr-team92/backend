@@ -2,8 +2,12 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "handler.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "node_modules/.bin/serverless offline start",
+    "tail": "node_modules/.bin/serverless logs -t -f app",
+    "deploy": "node_modules/.bin/serverless deploy",
+    "package": "node_modules/.bin/serverless package",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +21,7 @@
   },
   "homepage": "https://github.com/ccr-team92/backend#readme",
   "dependencies": {
-    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-jwt": "^6.0.0",
     "express-validator": "^6.9.2",
@@ -26,8 +30,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "babel-loader": "^8.2.2",
+    "serverless": "^2.19.0",
     "serverless-offline": "^6.8.0",
     "serverless-webpack": "^5.3.5",
     "webpack": "^5.15.0"

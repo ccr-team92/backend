@@ -1,4 +1,4 @@
-import mongodb from 'mongodb';
+import mongodb from "mongodb";
 const MongoClient = mongodb.MongoClient;
 
 const DB_URI = process.env.DB_URI;
@@ -12,7 +12,7 @@ let _db = null;
 export async function db() {
   if (_db === null) {
     await client.connect();
-    _db = client.db('ccr-team92');
+    _db = client.db();
   }
   return _db;
 }
