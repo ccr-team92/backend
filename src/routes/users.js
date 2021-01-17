@@ -18,7 +18,7 @@ router.post(
   body("username").isLength({ min: 3 }).isAlphanumeric().isAscii(),
   body("name").isLength({ min: 3 }),
   body("email").isEmail(),
-  body("age").isNumeric(),
+  body("date_of_birth").isDate({ format: 'YYYY-MM-DD' }),
   body("email").custom(async (value) => {
     const conn = await db();
     const emailCount = await conn
@@ -52,7 +52,7 @@ router.post(
       username: body.username,
       name: body.name,
       email: body.email,
-      age: body.age,
+      dob: body.date_of_birth,
       hash,
     });
 

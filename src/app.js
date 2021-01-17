@@ -6,7 +6,7 @@ import { router as paths } from "./routes/paths";
 export const app = express();
 app.use(express.json());
 app.get("/", function (req, res) {
-  res.send("Hello World!");
+  res.send("Trilha da vida!");
 });
 app.use('/users', users);
 app.use("/paths", paths);

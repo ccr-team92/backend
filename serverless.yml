@@ -21,6 +21,8 @@ provider:
 plugins:
   - serverless-webpack
   - serverless-offline
+  - serverless-mocha-plugin
+  - serverless-domain-manager
 
 functions:
   # debug:
@@ -46,5 +48,16 @@ custom:
     packager: 'yarn'
     excludeFiles: test/**/*.js
     keepOutputDirectory: true
+
   serverless-offline:
     noPrependStageInUrl: true
+
+  customDomain:
+    domainName: api.trilhadavida.com.br
+    stage: dev
+    basePath: dev
+    certificateName: '*.trilhadavida.com.br'
+    createRoute53Record: true
+    endpointType: 'regional'
+    apiType: rest
+    autoDomain: false
