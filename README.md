@@ -21,3 +21,6 @@ The main code list under the `src` folder.
 The index provides the main Express app wrapped in the serverless-http, to parse the HTTP request information provided by API Gateway.
 HTTP POST bodies must be in the JSON format, automatically handled by Express.
 Our routes are under `src/routes`, using explicit body validation and JWT middleware.
+
+Tests are handled by Mocha and the Serverless lib, spawning an environment close to what is present in the AWS Lambda containers.
+We plan to include continuous integration with Github actions, in a Dockerized environment.
