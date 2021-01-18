@@ -7,14 +7,14 @@ For our setup, we use Node.js in a serverless infrastructure, to reduce the init
 To accomplish it, we leverage the AWS infrastructure on the serverless paradigm: API Gateway, Lambda, S3, and CloudFront.
 Once a API request reaches API Gateway, AWS Lambda spins up a Node.js container and thread the request information into our code.
 Our code uses Express.js to handle the HTTP integration, identifying routes, sent information, and authentication.
-Its response is sent back to API Gateway, which will 
-Authentication is provided via JWT tokens, with a clear cut 
+Its response is sent back to API Gateway, which will be forwarded to the client.
+Authentication is provided via JWT tokens, with a clear cut on the security: the signing key and specific signing algorithm are required for it to be valid.
 
 As our persistant state layer, we use MongoDB.
 Given the flexible schema, the prototyping in a weekend is much quicker than in a fixed schema SQL database.
 Parts of the system may be rethinked in the future to migrate to a SQL database, as we see fit.
 
-Course content, such as podcasts and videos, are to be provided via S3 and CloudFront, a cheap and robust infrastructure for a Content Delivery Network.
+Course content, such as podcasts and videos, are provided via S3 and CloudFront, a cheap and robust infrastructure for a Content Delivery Network.
 The textual content and metadata from courses provided by the API can be easily cached at the API Gateway level, so to reduce the number of Lambda executions.
 
 The main code list under the `src` folder.
